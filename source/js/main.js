@@ -49,4 +49,15 @@
   if ($(window).width() < TABLET_WIDTH) {
     slickOn( $('.slider') );
   }
+
+  $(document).ready(function(){
+    $("a[href*=\\#]").on("click", function(e){
+    let anchor = $(this);
+    $('html, body').stop().animate({
+    scrollTop: $(anchor.attr('href')).offset().top
+    }, 777);
+    e.preventDefault();
+    return false;
+    });
+  });
 })()
