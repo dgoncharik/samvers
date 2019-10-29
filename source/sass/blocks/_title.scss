@@ -1,0 +1,34 @@
+.title {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 27px;
+  color: white;
+  font-size: 25px;
+  line-height: 37px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+
+  &__highlighted {
+    color: $highlight-color;
+  }
+
+  &::after {
+    content: "";
+    width: 80px;
+    height: 2px;
+    background-color: $highlight-color;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .title {
+    font-weight: 500;
+    font-size: 75px;
+    line-height: 111px;
+  }
+}

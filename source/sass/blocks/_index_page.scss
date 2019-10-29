@@ -1,0 +1,39 @@
+.index-page {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 500px;
+    background-color: $main-bg-color;
+    background-image: url("../img/index-bg-mobile.jpg");
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &__header {
+    margin-bottom: 90px; 
+  }
+}
+
+@media (min-width: $tablet-width) { 
+  .index-page {
+    &::before {
+      height: 924px;
+      background-image: url("../img/index-bg-desktop.jpg");
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .index-page {
+    &__header {
+      margin-bottom: 274px;
+    }
+  }
+}

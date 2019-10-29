@@ -1,0 +1,24 @@
+.about-us {
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 32px;
+    padding: 0 40px;
+    color: white;
+    text-align: center;
+  }
+}
+
+@media (min-width: $desktop-width) {
+
+  .about-us {
+    &__text {
+      font-size: 25px;
+      line-height: 37px;
+    }
+  }
+}

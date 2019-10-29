@@ -1,0 +1,29 @@
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 27px;
+  }
+
+  &__phone {
+    margin-right: auto;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .header {
+    padding-top: 18px;
+
+    &__row {
+      display: none;
+    }
+  }
+}

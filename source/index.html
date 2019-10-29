@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="./plugins/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick-theme.css"/>
+
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Самверс</title>
+</head>
+<body class="index-page">
+  <section class="header index-page__header container">
+    <div class="header__row">
+      <img src="./img/logo.svg" alt="Самверс" class="logo header__logo" width="107" height="30">
+      <a class="phone header__phone" href="tel:+375295757777">+375 29 575-77-77</a>
+      <button class="burger header__burger">Меню
+        <span class="burger__mid-line"></span>
+      </button>
+    </div>
+    <nav class="main-navigation header__main-navigation"> <!-- main-navigation--opened -->
+      <ul class="main-navigation__list">
+        <li class="main-navigation__item main-navigation__item--logo">
+          <img src="./img/logo.svg" alt="Самверс" class="logo main-navigation__logo" width="107" height="30">
+          <button class="burger main-navigation__burger burger--opened">Меню
+            <span class="burger__mid-line"></span>
+          </button>
+        </li>
+        <li class="main-navigation__item"><a class="main-navigation__link" href="#">Аренда фронтального погрузчика</a></li>
+        <li class="main-navigation__item"><a class="main-navigation__link" href="#">Аренда телескопического погрузчика</a></li> 
+        <li class="main-navigation__item main-navigation__item--contacts">
+          <a class="phone main-navigation__phone" href="tel:+375295757777">+375 29 575-77-77</a>
+          <a class="main-navigation__email" href="mailto:samvers@yandex.ru">samvers@yandex.ru</a>
+        </li>         
+      </ul>
+    </nav>
+  </section>
+
+  <section class="about-us container">
+    <h1 class="about-us__title title">
+      <span class="title__highlighted">Аренда</span> строительной техники <!-- Передаелать на js чтоб первое слово красилось в желтый -->
+    </h1>
+    <p class="about-us__text">Компания на рынке оказываемых услуг с 2007г.</p>
+
+    <div class="slider">
+      <div class="slider__item">
+        <img class="slider__item-img" src="img/сlock.svg" alt="пунктуальность" width="64" height="64">
+        <h4 class="slider__item-title">Пунктуальность</h4>
+        <p class="slider__item-text">Техника всегда приезжает вовремя и немного раньше</p>
+      </div>
+      <div class="slider__item">
+        <img class="slider__item-img" src="img/headphones.svg" alt="пунктуальность" width="64" height="64">
+        <h4 class="slider__item-title">12 лет опыта</h4>
+        <p class="slider__item-text">Опытный оператор экономит Вам до 30-50% затрат за счет высокой и качественной производительности работ</p>
+      </div>
+      <div class="slider__item">
+        <img class="slider__item-img" src="img/crane.svg" alt="пунктуальность" width="64" height="64">
+        <h4 class="slider__item-title">Новая техника</h4>
+        <p class="slider__item-text">Постоянное обновление парка строительных машин. Техника всегда исправна, заправлена и готова к тяжелой работе</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
