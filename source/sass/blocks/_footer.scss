@@ -20,7 +20,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: $tablet-width) {
   .footer {
     display: flex;
     align-items: center;
@@ -37,15 +37,24 @@
       padding: 0;
       width: 247px;
       text-align: left;
+    }
+
+    &__contacts {
+      align-items: flex-end;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .footer {
+    &__text {
       font-size: 15px;
       line-height: 22px;
     }
 
     &__contacts {
-      align-items: flex-end;
       font-size: 20px;
-      line-height: 30px;
+      line-height: 30px; 
     }
   }
 }
-

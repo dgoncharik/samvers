@@ -1,5 +1,5 @@
 .main-navigation {
-  background-color: rgba(#222222, .8);
+  background-color: rgba(black, .9);
   padding: 10px 16px;
   transition: top linear 500ms;
   width: 100%;
@@ -32,10 +32,16 @@
     color: inherit;
     text-decoration: none;
     transition: color 200ms;
+    outline: none;
+    position: relative;
 
     &:hover,
-    &:active {
+    &:focus {
       color: darken(white, 15%);
+    }
+
+    &:active {
+      color: darken(white, 20%);
     }
   }
 
@@ -46,17 +52,6 @@
 
   &--opened {
     top: 0;
-
-    // &::after {
-    //   content: "";
-    //   width: 100%;
-    //   left: 0;
-    //   top: 100%;
-    //   height: 100vw;
-    //   position: absolute;
-    //   background-color: rgba(blue, .2);
-    //   z-index: 99;
-    // }
   }
 }
 
@@ -86,6 +81,37 @@
         align-items: flex-end;
       }
     }
+
+    // Подчеркивание пунктов меню при ховере [начало]
+    &__link {
+      &::before,
+      &::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        position: absolute;
+        bottom: -10px;
+        background-color: $highlight-color;
+        border-radius: 2px;
+        transition: width 300ms;
+      }
+
+      &::before {
+        right: 50%;
+      }
+  
+      &:after {
+        left: 50%;
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          width: 50%;
+        }
+      }
+    }
+    // Подчеркивание пунктов меню при ховере [конец]
   }
 }
 
