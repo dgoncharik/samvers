@@ -1,0 +1,51 @@
+.footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $main-color;
+  text-align: center;
+  color: white;
+
+  &__logo {
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 20px; 
+    padding: 0 60px;
+    font-family: $additional-font-family;
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .footer {
+    display: flex;
+    align-items: center;
+
+    &__logo {
+      margin: 0;
+      margin-right: 83px;
+      padding: 0;
+    }
+
+    &__text {
+      margin: 0;
+      margin-right: auto;
+      padding: 0;
+      width: 247px;
+      text-align: left;
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    &__contacts {
+      align-items: flex-end;
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}
+

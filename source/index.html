@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,64 +10,210 @@
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="./plugins/slick/slick.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick-theme.css"/>
+  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick-theme.css" />
 
   <link rel="stylesheet" href="css/style.min.css">
   <title>Самверс</title>
 </head>
+
 <body class="index-page">
   <section class="header index-page__header container">
     <div class="header__row">
-      <img src="./img/logo.svg" alt="Самверс" class="logo header__logo" width="107" height="30">
-      <a class="phone header__phone" href="tel:+375295757777">+375 29 575-77-77</a>
+      <img src="./img/logo-mobile.svg" alt="Самверс" class="logo header__logo">
+      <p class="contacts header__contacts">
+        <a class="contacts__phone" href="tel:+375295757777">+375 29 575-77-77</a>
+      </p>
       <button class="burger header__burger">Меню
         <span class="burger__mid-line"></span>
       </button>
     </div>
-    <nav class="main-navigation header__main-navigation"> <!-- main-navigation--opened -->
+    <nav class="main-navigation header__main-navigation">
+      <!-- main-navigation--opened -->
       <ul class="main-navigation__list">
         <li class="main-navigation__item main-navigation__item--logo">
-          <img src="./img/logo.svg" alt="Самверс" class="logo main-navigation__logo" width="107" height="30">
+          <img src="./img/logo-mobile.svg" alt="Самверс" class="logo header__logo" width="107" height="30">
           <button class="burger main-navigation__burger burger--opened">Меню
             <span class="burger__mid-line"></span>
           </button>
         </li>
-        <li class="main-navigation__item"><a class="main-navigation__link" href="#">Аренда фронтального погрузчика</a></li>
-        <li class="main-navigation__item"><a class="main-navigation__link" href="#">Аренда телескопического погрузчика</a></li> 
-        <li class="main-navigation__item main-navigation__item--contacts">
-          <a class="phone main-navigation__phone" href="tel:+375295757777">+375 29 575-77-77</a>
-          <a class="main-navigation__email" href="mailto:samvers@yandex.ru">samvers@yandex.ru</a>
-        </li>         
+        <li class="main-navigation__item"><a class="main-navigation__link" href="#">Аренда фронтального погрузчика</a>
+        </li>
+        <li class="main-navigation__item"><a class="main-navigation__link" href="#">Аренда телескопического
+            погрузчика</a></li>
+        <li class="main-navigation__item contacts">
+          <a class="contacts__phone" href="tel:+375295757777">+375 29 575-77-77</a>
+          <a class="contacts__email" href="mailto:samvers@yandex.ru">samvers@yandex.ru</a>
+        </li>
       </ul>
     </nav>
   </section>
 
-  <section class="about-us container">
-    <h1 class="about-us__title title">
-      <span class="title__highlighted">Аренда</span> строительной техники <!-- Передаелать на js чтоб первое слово красилось в желтый -->
-    </h1>
-    <p class="about-us__text">Компания на рынке оказываемых услуг с 2007г.</p>
+  <main>
+    <section class="about-us index-page__about-us container">
+      <h1 class="about-us__title title">
+        <span class="title__highlighted">Аренда</span> строительной техники
+        <!-- Передаелать на js чтоб первое слово красилось в желтый -->
+      </h1>
+      <p class="about-us__text">Компания на рынке оказываемых услуг с 2007г.</p>
 
-    <div class="slider">
-      <div class="slider__item">
-        <img class="slider__item-img" src="img/сlock.svg" alt="пунктуальность" width="64" height="64">
-        <h4 class="slider__item-title">Пунктуальность</h4>
-        <p class="slider__item-text">Техника всегда приезжает вовремя и немного раньше</p>
+      <div class="slider">
+        <div class="slider__item">
+          <img class="slider__item-img" src="img/сlock.svg" alt="пунктуальность" width="64" height="64">
+          <h2 class="slider__item-title">Пунктуальность</h2>
+          <p class="slider__item-text">Техника всегда приезжает вовремя и немного раньше</p>
+        </div>
+        <div class="slider__item">
+          <img class="slider__item-img" src="img/headphones.svg" alt="пунктуальность" width="64" height="64">
+          <h2 class="slider__item-title">12 лет опыта</h2>
+          <p class="slider__item-text">Опытный оператор экономит Вам до 30-50% затрат за счет высокой и качественной
+            производительности работ</p>
+        </div>
+        <div class="slider__item">
+          <img class="slider__item-img" src="img/crane.svg" alt="пунктуальность" width="64" height="64">
+          <h2 class="slider__item-title">Новая техника</h2>
+          <p class="slider__item-text">Постоянное обновление парка строительных машин. Техника всегда исправна,
+            заправлена и готова к тяжелой работе</p>
+        </div>
       </div>
-      <div class="slider__item">
-        <img class="slider__item-img" src="img/headphones.svg" alt="пунктуальность" width="64" height="64">
-        <h4 class="slider__item-title">12 лет опыта</h4>
-        <p class="slider__item-text">Опытный оператор экономит Вам до 30-50% затрат за счет высокой и качественной производительности работ</p>
-      </div>
-      <div class="slider__item">
-        <img class="slider__item-img" src="img/crane.svg" alt="пунктуальность" width="64" height="64">
-        <h4 class="slider__item-title">Новая техника</h4>
-        <p class="slider__item-text">Постоянное обновление парка строительных машин. Техника всегда исправна, заправлена и готова к тяжелой работе</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="services index-page__services container">
+      <div class="services__item">
+        <h2 class="services__title">Услуги по аренде телескопических погрузчиков</h2>
+        <p class="services__price">от 50 руб/час (цена договорная)</p>
+        <p class="services__text">
+          Грузоподъемность 3-4т, все виды земляных работ, благоустройство,
+          планировка, снятие плодородного слоя, уборка и погрузка мусора, снега, разгрузка машин
+          (поддоны). В зависимости от специфики работ можно дополнить сменным оборудованием: вилы,
+          стрела, ковш (1,9-2,3 куб. м.)
+        </p>
+        <ul class="services__card-list">
+
+          <li class="services__card card">
+            <picture>
+              <source media="(min-width: 1300px)" srcset="./img/amkador-332c4-desktop.jpg">
+              <img src="./img/amkador-332c4-mobile.jpg" alt="Амкадор 332c4" class="card__img">
+            </picture>
+            <h3 class="card__title">Амкадор 332c4</h3>
+            <dl class="card__specifications">
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Грузоподъемность, тонн:</dt>
+                <dd class="card__specifications-value">3.4</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Вместимость основного ковша, м3:</dt>
+                <dd class="card__specifications-value">1.9</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Высота разгрузки, м:</dt>
+                <dd class="card__specifications-value">3</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Вид рабочего органа:</dt>
+                <dd class="card__specifications-value">ковш, стрела, вилы, чалки, паук</dd>
+              </div>
+            </dl>
+          </li>
+
+          <li class="services__card card">
+            <picture>
+              <source media="(min-width: 1300px)" srcset="./img/amkador-342c4-desktop.jpg">
+              <img src="./img/amkador-342c4-mobile.jpg" alt="Амкадор 342c4" class="card__img">
+            </picture>
+            <h3 class="card__title">Амкадор 342c4</h3>
+            <dl class="card__specifications">
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Грузоподъемность, тонн:</dt>
+                <dd class="card__specifications-value">4</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Вместимость основного ковша, м3:</dt>
+                <dd class="card__specifications-value">2.3</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Высота разгрузки, м:</dt>
+                <dd class="card__specifications-value">3</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Вид рабочего органа:</dt>
+                <dd class="card__specifications-value">ковш, стрела, вилы, чалки, паук</dd>
+              </div>
+            </dl>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="services__item">
+        <h2 class="services__title">Услуги по аренде телескопических погрузчиков</h2>
+        <p class="services__price">от 50 руб/час (цена договорная)</p>
+        <p class="services__text">
+          Высота до 18м, грузоподъемность до 4,5т. Все виды земляных работ любой сложности.
+          Планировка и благоустройство территории. Погрузочно-разгрузочные работы, высотные работы.
+          В наличии весь комплект навесного оборудования ковш, вилы, чалки, люлька. Опытный оператор.
+          Работаем круглосуточно, без выходных.
+        </p>
+
+        <ul class="services__card-list">
+          <li class="services__card card">
+            <picture>
+              <source media="(min-width: 1300px)" srcset="./img/manitou-МТ-1840-desktop.jpg">
+              <img src="./img/manitou-МТ-1840-mobile.jpg" alt="Manitou МТ 1840" class="card__img">
+            </picture>
+            <h3 class="card__title">Manitou МТ 1840</h3>
+            <dl class="card__specifications">
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Грузоподъемность, тонн:</dt>
+                <dd class="card__specifications-value">4.5</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Высота подъема рабочего органа, м:</dt>
+                <dd class="card__specifications-value">18</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Вид рабочего органа:</dt>
+                <dd class="card__specifications-value">ковш, люлька, вилы, чалки, паук</dd>
+              </div>
+            </dl>
+
+          </li>
+          <li class="services__card card">
+            <picture>
+              <source media="(min-width: 1300px)" srcset="./img/caterpillar-th414-desktop.jpg">
+              <img src="./img/caterpillar-th414-mobile.jpg" alt="Caterpillar TH414" class="card__img">
+            </picture>
+            <h3 class="card__title">Caterpillar TH414</h3>
+            <dl class="card__specifications">
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Грузоподъемность, тонн:</dt>
+                <dd class="card__specifications-value">4</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Высота подъема рабочего органа, м:</dt>
+                <dd class="card__specifications-value">14</dd>
+              </div>
+              <div class="card__specifications-item">
+                <dt class="card__specifications-characteristic">Вид рабочего органа:</dt>
+                <dd class="card__specifications-value">ковш, люлька, вилы, чалки, паук</dd>
+              </div>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <img src="./img/logo-mobile.svg" alt="Самверс" class="logo footer__logo" width="107" height="30">
+    <p class="footer__text">Частное унитарное предприятие по оказанию услуг «Самверс»</p>
+    <p class="contacts footer__contacts">
+      <a class="contacts__phone" href="tel:+375295757777">+375 29 575-77-77</a>
+      <a class="contacts__email" href="mailto:samvers@yandex.ru">samvers@yandex.ru</a>
+    </p>
+  </footer>
+  <script src="js/picturefill.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

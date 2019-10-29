@@ -24,11 +24,6 @@
       align-items: center;
       margin-bottom: 48px;
     }
-
-    &--contacts {
-      display: flex;
-      flex-direction: column;
-    }
   }
 
   &__link {
@@ -45,6 +40,17 @@
 
   &--opened {
     top: 0;
+
+    // &::after {
+    //   content: "";
+    //   width: 100%;
+    //   left: 0;
+    //   top: 100%;
+    //   height: 100vw;
+    //   position: absolute;
+    //   background-color: rgba(blue, .2);
+    //   z-index: 99;
+    // }
   }
 }
 
@@ -68,9 +74,10 @@
         margin-right: auto;
       }
 
-      &--contacts {
+      &:last-child {
         margin-right: 0;
         margin-left: auto;
+        align-items: flex-end;
       }
     }
   }

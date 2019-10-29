@@ -2,7 +2,7 @@
   margin-left: -16px;
   margin-right: -16px;
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 
   &.slick-slider.slick-dotted {
     margin-bottom: 0;
@@ -66,6 +66,8 @@
       background-color: #2C464F;
       border-radius: 50%;
       opacity: .1;
+      top: auto;
+      bottom: 0;
     }
 
     li.slick-active button::before {
@@ -81,16 +83,45 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-bottom: 0;
 
     &__item {
       width: 32%;
       max-width: 288px;
       margin: 0;
-      // margin-right: 30px;
 
       &:last-child {
         margin-right: 0;
       }
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .slider {
+    justify-content: space-between;
+
+    &__item {
+      max-width: 370px;
+      padding-top: 43px;
+      padding-left: 55px;
+      padding-right: 55px;
+    }
+
+    &__item-img {
+      margin-bottom: 35px;
+    }
+
+    &__item-title {
+      font-size: 25px;
+      line-height: 130.5%;
+      padding-bottom: 12px;
+      margin-bottom: 10px;
+    }
+  
+    &__item-text {
+      font-size: 15px;
+      line-height: 145.19%;
     }
   }
 }
