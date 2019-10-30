@@ -22,8 +22,11 @@
 
 @media (min-width: $tablet-width) {
   .footer {
-    display: flex;
-    align-items: center;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
 
     &__logo {
       margin: 0;

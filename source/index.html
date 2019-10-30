@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick.css" />
-  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick-theme.css" />
-  <link rel="stylesheet" href="css/style.min.css">
+  <style>
+    body {
+      opacity: 0;
+      background-color: white;
+    }
+  </style>
   <title>Самверс</title>
 </head>
 
@@ -24,34 +25,33 @@
         <span class="burger__mid-line"></span>
       </button>
     </div>
+    <!-- main-navigation--opened -->
     <nav class="main-navigation header__main-navigation">
-      <!-- main-navigation--opened -->
+      <div class="main-navigation__top">
+        <img src="./img/logo-mobile.svg" alt="Самверс" class="logo" width="107" height="30">
+        <button class="burger main-navigation__burger burger--opened">Меню
+          <span class="burger__mid-line"></span>
+        </button>
+      </div>
       <ul class="main-navigation__list">
-        <li class="main-navigation__item main-navigation__item--logo">
-          <img src="./img/logo-mobile.svg" alt="Самверс" class="logo header__logo" width="107" height="30">
-          <button class="burger main-navigation__burger burger--opened">Меню
-            <span class="burger__mid-line"></span>
-          </button>
-        </li>
-        <li class="main-navigation__item"><a class="main-navigation__link" href="#wheel-loaders">Аренда фронтального
+        <li><a href="#wheel-loaders">Аренда фронтального
             погрузчика</a>
         </li>
-        <li class="main-navigation__item"><a class="main-navigation__link" href="#telescopic-handlers">Аренда
+        <li><a href="#telescopic-handlers">Аренда
             телескопического
             погрузчика</a></li>
-        <li class="main-navigation__item contacts">
-          <a class="contacts__phone" href="tel:+375295757777">+375 29 575-77-77</a>
-          <a class="contacts__email" href="mailto:samvers@yandex.ru">samvers@yandex.ru</a>
-        </li>
       </ul>
+      <div class="main-navigation__contacts contacts">
+        <a class="contacts__phone" href="tel:+375295757777">+375 29 575-77-77</a>
+        <a class="contacts__email" href="mailto:samvers@yandex.ru">samvers@yandex.ru</a>
+      </div>
     </nav>
   </section>
 
   <main>
     <section class="about-us index-page__about-us container">
-      <h1 class="about-us__title title">
-        <span class="title__highlighted">Аренда</span> строительной техники
-        <!-- Передаелать на js чтоб первое слово красилось в желтый -->
+      <h1 class="about-us__title title color-first-word">
+        Аренда строительной техники
       </h1>
       <p class="about-us__text">Компания на рынке оказываемых услуг с 2007г.</p>
 
@@ -202,14 +202,23 @@
     </section>
   </main>
 
-  <footer class="footer container">
-    <img src="./img/logo-mobile.svg" alt="Самверс" class="logo footer__logo" width="107" height="30">
-    <p class="footer__text">Частное унитарное предприятие по оказанию услуг «Самверс»</p>
-    <p class="contacts footer__contacts">
-      <a class="contacts__phone" href="tel:+375295757777">+375 29 575-77-77</a>
-      <a class="contacts__email" href="mailto:samvers@yandex.ru">samvers@yandex.ru</a>
-    </p>
+  <footer class="footer">
+    <div class="container footer__wrapper">
+      <img src="./img/logo-mobile.svg" alt="Самверс" class="logo footer__logo" width="107" height="30">
+      <p class="footer__text">Частное унитарное предприятие по оказанию услуг «Самверс»</p>
+      <p class="contacts footer__contacts">
+        <a class="contacts__phone" href="tel:+375295757777">+375 29 575-77-77</a>
+        <a class="contacts__email" href="mailto:samvers@yandex.ru">samvers@yandex.ru</a>
+      </p>
+    </div>
   </footer>
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick-theme.css" />
+  <link rel="stylesheet" href="css/style.min.css">
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="./plugins/slick/slick.min.js"></script>

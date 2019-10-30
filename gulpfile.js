@@ -16,6 +16,7 @@ var sourcemaps = require("gulp-sourcemaps");
 var postscc = require("gulp-postcss");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
+var babel = require('gulp-babel');
 
 var path = {
   build: {
@@ -54,7 +55,7 @@ gulp.task("copy", function() {
     path.source.fonts + "/**/*.{woff,woff2}",
     path.source.img + "/**/*.*",
     "!" + path.source.svgSprite + "/**", //не копировать папку с файлами для svg спрайта
-    path.source.js + "/**/*.js",
+    // path.source.js + "/**/*.js",
     path.source.ico + "/*.ico"
   ], {base: path.source.dir})
   .pipe(gulp.dest(path.build.dir))
@@ -107,6 +108,11 @@ gulp.task("css", function() {
 
 gulp.task("js", function() {
   return gulp.src(path.source.js + "/**/*.js")
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.js))
     .pipe(browserSync.stream())
 })
@@ -171,5 +177,5 @@ gulp.task("server", function() {
    gulp.watch(path.source.fonts + "/**/*.{woff,woff2}", gulp.series("fonts", "refresh"));
 });
 
-gulp.task("build", gulp.series("clean", "copy", "css", "webp", "plugins", "svg-sprite", "html"));
+gulp.task("build", gulp.series("clean", "copy", "css", "js", "webp", "plugins", "svg-sprite", "html"));
 gulp.task("default", gulp.series("build", "server"));

@@ -1,9 +1,23 @@
 ;(() => {
-  let TABLET_WIDTH = 768;
-  let headerBurger = document.querySelector('.header__burger');
-  let mainMenu = document.querySelector('.header__main-navigation');
-  let mainMenuBurger = mainMenu.querySelector('.main-navigation__burger');
-  let MENU_OPENED = 'main-navigation--opened';
+  const TABLET_WIDTH = 768;
+  const headerBurger = document.querySelector('.header__burger');
+  const mainMenu = document.querySelector('.header__main-navigation');
+  const mainMenuBurger = mainMenu.querySelector('.main-navigation__burger');
+  const MENU_OPENED = 'main-navigation--opened';
+  const sliderJqElem = $('.slider');
+  let _sliderIsEnabled = false;
+
+  function colorFirstWord(arr, color) {
+    /* принимает массив элементов и цвет. Задает свойство color первому слому текстового содержимого каждого элемента */
+    for (let i=0; i < arr.length; i++) {
+      let element = arr[i];
+      let words = element.innerText.split(' ').filter(Boolean);
+      if (words.length > 0) {
+        element.innerHTML = `<span style="color: ${color}">${words[0]}</span> ${words.slice(1).join(' ')}`;
+      }
+    }
+  }
+  colorFirstWord(document.querySelectorAll('.color-first-word'), '#FEE000');
 
   function slickOn(jqElem) {
     jqElem.slick({
@@ -13,7 +27,14 @@
       arrows: false,
       slidesToScroll: 1
     });
+    _sliderIsEnabled = true;
   }
+
+  function slickOff(jqElem) {
+    jqElem.slick('unslick');
+    _sliderIsEnabled = false;
+  }
+  
 
   function menuIsOpened() {
     return mainMenu.classList.contains(MENU_OPENED);
@@ -26,6 +47,18 @@
   function hideMenu() {
     mainMenu.classList.remove(MENU_OPENED);
   }
+
+  if (window.innerWidth < TABLET_WIDTH) {
+    slickOn(sliderJqElem);
+  }
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > TABLET_WIDTH && _sliderIsEnabled) {
+      slickOff(sliderJqElem)
+    } else if (window.innerWidth < TABLET_WIDTH && !_sliderIsEnabled) {
+      slickOn(sliderJqElem)
+    }
+  })
 
   headerBurger.addEventListener('click', function(evt) {
     evt.preventDefault();
@@ -45,10 +78,6 @@
       hideMenu();
     } 
   });
-
-  if ($(window).width() < TABLET_WIDTH) {
-    slickOn( $('.slider') );
-  }
 
   $(document).ready(function(){
     $("a[href*=\\#]").on("click", function(e){

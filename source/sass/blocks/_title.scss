@@ -9,10 +9,6 @@
   text-align: center;
   position: relative;
 
-  &__highlighted {
-    color: $highlight-color;
-  }
-
   &::after {
     content: "";
     width: 80px;
