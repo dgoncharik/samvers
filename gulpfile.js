@@ -17,6 +17,10 @@ var postscc = require("gulp-postcss");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var babel = require('gulp-babel');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var flatten = require('gulp-flatten');
+var rollup = require('gulp-rollup');
 
 var path = {
   build: {
@@ -26,7 +30,8 @@ var path = {
     img: "build/img",
     fonts: "build/fonts",
     js: "build/js",
-    plugins: "build/plugins"
+    other: "build/other"
+    // plugins: "build/plugins"
   },
   source: {
     dir: "source",
@@ -37,7 +42,8 @@ var path = {
     js: "source/js",
     ico: "source",
     svgSprite: "source/img/svg-sprite",
-    plugins: "source/plugins"
+    other: "source/other"
+    // plugins: "source/plugins"
   }
 }
 
@@ -87,7 +93,7 @@ gulp.task("html-min", function() {
 });
 
 gulp.task("css", function() {
-  return gulp.src(path.source.style + "/**/*.{scss,sass}")
+  return gulp.src(path.source.style + "/**/style.{scss,sass}")
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:"compressed"}) //expanded - развернутый css; compressed - минифициорованный
     .on("error", sass.logError))
@@ -109,13 +115,38 @@ gulp.task("css", function() {
 gulp.task("js", function() {
   return gulp.src(path.source.js + "/**/*.js")
     .pipe(sourcemaps.init())
+    // .pipe(rollup({}, 'iife'))
     .pipe(babel({
       presets: ['@babel/env']
     }))
+    .pipe(concat('main.min.js', { newLine : ' ; ' }))
+    .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.js))
     .pipe(browserSync.stream())
 })
+
+gulp.task('otherJs', function() {
+  return gulp.src(path.source.other + "/**/*.js")
+  .pipe(concat('otherFull.min.js', { newLine : ' ; ' }))
+  .pipe(uglify())
+  .pipe(gulp.dest(path.build.other))
+})
+
+gulp.task('otherCss', function() {
+  return gulp.src(path.source.other + "/**/*.css")
+  .pipe(concat('otherFull.min.css'))
+  .pipe(csso())
+  .pipe(gulp.dest(path.build.other))
+})
+
+gulp.task('otherCopyAll', function() {
+  return gulp.src(path.source.other + "/**/*.*")
+  .pipe(flatten())
+  .pipe(gulp.dest(path.build.other))
+})
+
+gulp.task("other", gulp.series("otherCss", "otherJs", "otherCopyAll"))
 
 gulp.task("fonts", function() {
   return gulp.src(path.source.fonts + "/**/*.{woff,woff2}")
@@ -153,10 +184,10 @@ gulp.task("svg-sprite", function() {
   .pipe(gulp.dest(path.build.img))
 })
 
-gulp.task('plugins', function() {
-  return gulp.src(path.source.plugins + "/**/*")
-  .pipe(gulp.dest(path.build.plugins))
-})
+// gulp.task('plugins', function() {
+//   return gulp.src(path.source.plugins + "/**/*")
+//   .pipe(gulp.dest(path.build.plugins))
+// })
 
 gulp.task("server", function() {
   browserSync.init({
@@ -168,7 +199,8 @@ gulp.task("server", function() {
       // host: "localhost",
       // port: 3000,
   });
-   gulp.watch(path.source.plugins + "/**/*", gulp.series("plugins", "refresh"));
+  //  gulp.watch(path.source.plugins + "/**/*", gulp.series("plugins", "refresh"));
+   gulp.watch(path.source.other + "/**/*", gulp.series("other", "refresh"));
    gulp.watch(path.source.html + "/*.html", gulp.series("html", "refresh"));
    gulp.watch(path.source.style + "/**/*.{scss,sass}", gulp.series("css"));
    gulp.watch(path.source.img + "/**/*.*", gulp.series("copy-img"));
@@ -177,5 +209,5 @@ gulp.task("server", function() {
    gulp.watch(path.source.fonts + "/**/*.{woff,woff2}", gulp.series("fonts", "refresh"));
 });
 
-gulp.task("build", gulp.series("clean", "copy", "css", "js", "webp", "plugins", "svg-sprite", "html"));
+gulp.task("build", gulp.series("clean", "copy", "css", "js", "other", /* "webp", */ "svg-sprite", "html"));
 gulp.task("default", gulp.series("build", "server"));

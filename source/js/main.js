@@ -8,7 +8,7 @@
   let _sliderIsEnabled = false;
 
   function colorFirstWord(arr, color) {
-    /* принимает массив элементов и цвет. Задает свойство color первому слому текстового содержимого каждого элемента */
+    /* принимает массив элементов и цвет. Задает свойство color первому слову текстового содержимого каждого элемента */
     for (let i=0; i < arr.length; i++) {
       let element = arr[i];
       let words = element.innerText.split(' ').filter(Boolean);
