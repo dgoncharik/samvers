@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="no-js">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    document.querySelector('html').classList.remove('no-js');
+  </script>
   <style>
-    body {
+    html:not(.no-js) body {
       opacity: 0;
-      background-color: white;
     }
   </style>
   <title>Самверс</title>
@@ -215,10 +217,10 @@
 
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
-
+  
   <link rel="stylesheet" href="other/otherFull.min.css">
   <link rel="stylesheet" href="css/style.min.css">
-  
+
   <script src="other/otherFull.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>
